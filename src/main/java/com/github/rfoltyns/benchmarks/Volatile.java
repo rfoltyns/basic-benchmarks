@@ -2,7 +2,7 @@ package com.github.rfoltyns.benchmarks;
 
 import org.openjdk.jmh.infra.Blackhole;
 
-public final class Volatile implements Test {
+public final class Volatile implements BasicTest {
 
     private volatile long state = 0L;
 

@@ -14,7 +14,7 @@ import org.openjdk.jmh.infra.Blackhole;
 import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.Throughput)
-@OutputTimeUnit(TimeUnit.SECONDS)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
 @State(Scope.Benchmark)
 @Fork(jvmArgsAppend = {
         "-ea",

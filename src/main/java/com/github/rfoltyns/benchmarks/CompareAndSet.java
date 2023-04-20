@@ -4,7 +4,7 @@ import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class CompareAndSet implements Test {
+public class CompareAndSet implements BasicTest {
 
     private final AtomicLong state = new AtomicLong();
 

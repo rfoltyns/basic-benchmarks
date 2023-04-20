@@ -1,6 +1,6 @@
 package com.github.rfoltyns.benchmarks.jmh;
 
-import com.github.rfoltyns.benchmarks.SynchronizedInstance;
+import com.github.rfoltyns.benchmarks.SynchronizedClass;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -26,18 +26,18 @@ import java.util.concurrent.TimeUnit;
 }
 )
 @Threads(3)
-public class SynchronizedInstanceBenchmarkT3 {
+public class SynchronizedClassBenchmarkT3 {
 
-    private final SynchronizedInstance si = new SynchronizedInstance();
+    private final SynchronizedClass sc = new SynchronizedClass();
 
     @Benchmark
     public void test(final Blackhole fox) {
-        si.test(fox);
+        sc.test(fox);
     }
 
     @TearDown
     public void tearDown() {
-        System.out.println("Count: " + si.getState());
+        System.out.println("Count: " + sc.getState());
     }
 
 }

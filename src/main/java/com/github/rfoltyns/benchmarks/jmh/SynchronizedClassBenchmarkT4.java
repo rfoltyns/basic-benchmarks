@@ -1,6 +1,6 @@
 package com.github.rfoltyns.benchmarks.jmh;
 
-import com.github.rfoltyns.benchmarks.NonVolatile;
+import com.github.rfoltyns.benchmarks.SynchronizedClass;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -15,7 +15,7 @@ import org.openjdk.jmh.infra.Blackhole;
 import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.Throughput)
-@OutputTimeUnit(TimeUnit.SECONDS)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
 @State(Scope.Benchmark)
 @Fork(jvmArgsAppend = {
         "-ea",
@@ -25,19 +25,19 @@ import java.util.concurrent.TimeUnit;
         "-Djmh.pinned=true"
 }
 )
-@Threads(2)
-public class NonVolatileBenchmarkT2 {
+@Threads(4)
+public class SynchronizedClassBenchmarkT4 {
 
-    private final NonVolatile nv = new NonVolatile();
+    private final SynchronizedClass sc = new SynchronizedClass();
 
     @Benchmark
     public void test(final Blackhole fox) {
-        nv.test(fox);
+        sc.test(fox);
     }
 
     @TearDown
     public void tearDown() {
-        System.out.println("Count: " + nv.getState());
+        System.out.println("Count: " + sc.getState());
     }
 
 }

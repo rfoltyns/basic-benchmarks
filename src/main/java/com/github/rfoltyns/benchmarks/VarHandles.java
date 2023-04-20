@@ -5,7 +5,7 @@ import org.openjdk.jmh.infra.Blackhole;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
 
-public final class VarHandles implements Test {
+public final class VarHandles implements BasicTest {
 
     private long value;
     private static final VarHandle VALUE;

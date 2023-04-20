@@ -1,7 +1,6 @@
 package com.github.rfoltyns.benchmarks.jcstress;
 
-import com.github.rfoltyns.benchmarks.NonVolatile;
-import com.github.rfoltyns.benchmarks.Volatile;
+import com.github.rfoltyns.benchmarks.Plain;
 import org.openjdk.jcstress.annotations.Actor;
 import org.openjdk.jcstress.annotations.Expect;
 import org.openjdk.jcstress.annotations.JCStressTest;
@@ -16,9 +15,9 @@ import org.openjdk.jcstress.infra.results.LL_Result;
         @Outcome(id="2, 1", expect = Expect.ACCEPTABLE, desc="OK"),
 })
 @State
-public class NonVolatileT2 {
+public class PlainT2 {
 
-    private final NonVolatile v = new NonVolatile();
+    private final Plain v = new Plain();
 
     @Actor
     public void test1(final LL_Result r) {

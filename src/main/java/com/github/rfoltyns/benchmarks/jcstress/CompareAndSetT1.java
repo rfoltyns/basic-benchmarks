@@ -1,7 +1,6 @@
 package com.github.rfoltyns.benchmarks.jcstress;
 
 import com.github.rfoltyns.benchmarks.CompareAndSet;
-import com.github.rfoltyns.benchmarks.NonVolatile;
 import org.openjdk.jcstress.annotations.Actor;
 import org.openjdk.jcstress.annotations.Expect;
 import org.openjdk.jcstress.annotations.JCStressTest;

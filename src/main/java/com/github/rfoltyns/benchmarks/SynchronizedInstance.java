@@ -2,7 +2,7 @@ package com.github.rfoltyns.benchmarks;
 
 import org.openjdk.jmh.infra.Blackhole;
 
-public final class SynchronizedInstance implements Test {
+public final class SynchronizedInstance implements BasicTest {
 
     private long state = 0L;
 

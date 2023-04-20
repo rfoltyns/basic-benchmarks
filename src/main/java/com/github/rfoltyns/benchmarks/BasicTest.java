@@ -2,7 +2,7 @@ package com.github.rfoltyns.benchmarks;
 
 import org.openjdk.jmh.infra.Blackhole;
 
-public interface Test {
+public interface BasicTest {
     void test(Blackhole fox);
 
     long getState();

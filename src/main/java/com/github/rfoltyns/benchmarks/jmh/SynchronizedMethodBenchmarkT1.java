@@ -9,12 +9,13 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
+import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.Throughput)
-@OutputTimeUnit(TimeUnit.SECONDS)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
 @State(Scope.Benchmark)
 @Fork(jvmArgsAppend = {
         "-ea",
@@ -24,6 +25,7 @@ import java.util.concurrent.TimeUnit;
         "-Djmh.pinned=true"
 }
 )
+@Threads(1)
 public class SynchronizedMethodBenchmarkT1 {
 
     private final SynchronizedMethod sm = new SynchronizedMethod();
